@@ -1,16 +1,16 @@
-#include "Scalpel.h"
+#include "Quill.h"
 #include <iostream>
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
-namespace scalpel {
+namespace quill {
 	int test() {
 		if (!glfwInit()) {
 			return -1;
 		}
 		std::cout << "GLFW Didn't Die!\n";
 
-		GLFWwindow* window = glfwCreateWindow(500, 500, "Scalpel Linking Test", NULL, NULL);
+		GLFWwindow* window = glfwCreateWindow(500, 500, "Quill Linking Test", NULL, NULL);
 
 		if (!window) {
 			return -1;

@@ -24,6 +24,7 @@
     <ProjectGuid>{ea025042-e328-4435-8683-c5f6560cb788}</ProjectGuid>
     <RootNamespace>Scalpel</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Quill</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -143,10 +144,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\Scalpel.h" />
+    <ClInclude Include="src\quill.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Scalpel.cpp" />
+    <ClCompile Include="src\quill.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

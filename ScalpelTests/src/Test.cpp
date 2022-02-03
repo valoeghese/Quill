@@ -1,8 +1,14 @@
 #include <stdio.h>
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
-#include "Scalpel.h";
- 
+
+//#define QUILL_TESTING
+#include "quill.h";
+
 int main() {
-	return scalpel::test();
+#ifdef QUILL_TESTING
+	return quill::test();
+#else
+
+#endif
 }
