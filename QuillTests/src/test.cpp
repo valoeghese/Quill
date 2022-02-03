@@ -22,7 +22,6 @@ class TestScene : public Scene {
 };
 
 int main() {
-	
 	if (!glfwInit()) {
 		cout << "GLFW Failed to Initialise." << endl;
 		return -1;

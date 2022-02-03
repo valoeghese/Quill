@@ -1,18 +1,27 @@
 #include "window.h"
 
 #include <iostream>
+#include <unordered_map>
 
 namespace quill {
-	// Const, Dest
+	// Const, Dest, static stuff
+	std::unordered_map<GLFWwindow*, Window*> reverse_lookup;
 
 	Window::Window(int width, int height, GLFWwindow* glfw_inst) {
 		this->width = width;
 		this->height = height;
 		this->glfw_inst = glfw_inst;
+		reverse_lookup[glfw_inst] = this;
+		glfwSetFramebufferSizeCallback(this->glfw_inst, Window::OnWindowResize);
 	}
 	
 	Window::~Window() {
+		reverse_lookup.erase(this->glfw_inst); // remove the reference to this
 		glfwDestroyWindow(this->glfw_inst);
+	}
+
+	void Window::OnWindowResize(GLFWwindow* window, int width, int height) {
+		reverse_lookup[window]->OnResize(window, width, height);
 	}
 
 	// Info/Accessor/Mutator Methods
@@ -35,6 +44,12 @@ namespace quill {
 
 	// Functional Methods
 	
+	void Window::OnResize(GLFWwindow* window, int width, int height) {
+		glViewport(0, 0, width, height);
+		this->width = width;
+		this->height = height;
+	}
+
 	void Window::Close() {
 		this->should_close = 1;
 	}

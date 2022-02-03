@@ -16,6 +16,10 @@ namespace quill {
 
 		// Returns whether this window should close.
 		int ShouldClose();
+		// Called by GLFW on window resize.
+		void OnResize(GLFWwindow* window, int width, int height);
+
+		static void OnWindowResize(GLFWwindow* window, int width, int height);
 	public:
 		// Const, Dest
 
