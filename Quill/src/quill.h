@@ -8,9 +8,5 @@
 #include "window.h"
 
 namespace quill {
-#ifdef QUILL_GL_TESTING
-	int test();
-#else
 	Window* CreateWindow(int width, int height, std::string title);
-#endif
 }

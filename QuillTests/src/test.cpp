@@ -1,6 +1,5 @@
 #include <iostream>
 
-//#define QUILL_GL_TESTING
 #include "quill.h";
 
 using std::cout;
@@ -9,9 +8,6 @@ using std::endl;
 using quill::Window;
 
 int main() {
-#ifdef QUILL_GL_TESTING
-	return quill::test();
-#else
 	if (!glfwInit()) {
 		cout << "GLFW Failed to Initialise." << endl;
 		return -1;
@@ -31,5 +27,4 @@ int main() {
 
 	delete window;
 	return 0;
-#endif
 }
