@@ -1,6 +1,9 @@
 #include <iostream>
 
-#include "quill.h";
+#include <GL/glew.h>
+#include <GLFW/glfw3.h>
+
+#include "quill.h"
 
 using std::cout;
 using std::endl;
