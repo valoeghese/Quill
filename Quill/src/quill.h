@@ -2,6 +2,7 @@
 
 #include <string>
 
+#include "scene.h" // also included by window, but implemented here anyway bc/ main library header
 #include "window.h"
 
 namespace quill {

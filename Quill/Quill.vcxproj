@@ -144,6 +144,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\scene.h" />
     <ClInclude Include="src\quill.h" />
     <ClInclude Include="src\window.h" />
   </ItemGroup>

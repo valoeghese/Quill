@@ -3,29 +3,46 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
+#include "scene.h"
+
 namespace quill {
 	class Window {
 	private:
 		int width;
 		int height;
 		GLFWwindow* glfw_inst;
+		Scene* current_scene = NULL;
+		int should_close = 0;
+
+		// Returns whether this window should close.
+		int ShouldClose();
 	public:
-		// const, dest
+		// Const, Dest
 
 		Window(int width, int height, GLFWwindow* glfw_inst);
 		~Window();
 
-		// status
+		///////////////////////////////////////////
+		// Accessors, Mutators, Status Functions //
+		///////////////////////////////////////////
 
-		// Returns whether this window should close.
-		int ShouldClose();
-		
-		// other
+		// Retrieves the width of the window.
+		int GetWidth();
 
-		// Clears the colour and depth buffers of this window.
-		void ClearBuffers();
+		// Retrieves the height of the window.
+		int GetHeight();
 
-		// Swaps the buffers and Polls GLFW events on the window.
-		void SwapBuffers();
+		// Sets the current scene of the window.
+		void SetScene(Scene* scene);
+
+		////////////////////////
+		// Functional Methods //
+		////////////////////////
+
+		// Tells the window to close next frame.
+		void Close();
+
+		// Starts the main loop
+		void MainLoop();
 	};
 }
