@@ -43,6 +43,9 @@ namespace quill {
 		// Functional Methods //
 		////////////////////////
 
+		// Make this window have the current OpenGL context
+		void MakeContextCurrent();
+
 		// Tells the window to close next frame.
 		void Close();
 

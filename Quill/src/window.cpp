@@ -44,6 +44,10 @@ namespace quill {
 
 	// Functional Methods
 	
+	void Window::MakeContextCurrent() {
+		glfwMakeContextCurrent(this->glfw_inst);
+	}
+
 	void Window::OnResize(GLFWwindow* window, int width, int height) {
 		glViewport(0, 0, width, height);
 		this->width = width;

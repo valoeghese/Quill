@@ -9,8 +9,7 @@ namespace quill {
 		}
 		
 		Window* result = new Window(width, height, glfwInst);
-
-		glfwMakeContextCurrent(glfwInst);
+		result->MakeContextCurrent();
 
 		if (glewInit() != GLEW_OK) {
 			delete result;
